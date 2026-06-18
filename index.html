@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arham - Personal Cyberpunk Portfolio with dynamic command-line terminal, projects showcasing, and interactive skills dashboard.">
+  <title>Arham // Personal Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js"></script>
+</head>
+<body class="theme-cyberpunk">
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-grid"></div>
+
+  <!-- Header / Nav -->
+  <header id="header">
+    <div class="logo" id="logo-btn">ARHAM<span>.IO</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-neon" id="terminal-toggle">
+        <span style="font-family: var(--font-mono); font-size: 0.8rem;">[CLI]</span> Terminal
+      </button>
+    </div>
+  </header>
+
+  <!-- Collapsible Side Terminal Drawer -->
+  <div class="terminal-drawer" id="terminal-drawer">
+    <div class="terminal-header">
+      <div class="title">
+        <span class="terminal-dot dot-close" id="terminal-close"></span>
+        <span>system@arham.io:~</span>
+      </div>
+      <div class="controls">
+        <span class="terminal-dot dot-minimize"></span>
+        <span class="terminal-dot dot-maximize"></span>
+      </div>
+    </div>
+    <div class="terminal-body" id="terminal-body">
+      <div class="terminal-welcome">
+        <p>Welcome to Arham's Terminal Interface [v1.0.0]</p>
+        <p>Type <span style="color: var(--accent-cyan); font-weight: bold;">help</span> to see the list of active commands.</p>
+        <p>--------------------------------------------------</p>
+      </div>
+      <div class="terminal-output" id="terminal-output"></div>
+      <div class="terminal-input-row">
+        <span class="terminal-prompt">arham_usr$</span>
+        <input type="text" class="terminal-input" id="terminal-input" placeholder="Type a command..." autofocus autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Intro / Hero Section -->
+    <section id="intro">
+      <div class="hero-container">
+        <div class="hero-info">
+          <h2>[SYSTEM: ONLINE]</h2>
+          <h1>Hi, I'm <span class="text-gradient text-glow">Arham Goyal</span></h1>
+          <h2 style="font-family: var(--font-mono); color: var(--accent-magenta); text-transform: none; margin-bottom: 1.5rem; letter-spacing: 0.5px;">
+            $ <span id="typing-text">Data Scientist</span><span style="animation: blink 1s step-end infinite; color: var(--accent-cyan);">|</span>
+          </h2>
+          <p>
+            Building at the intersection of Data Science, Quantitative Finance, and Entrepreneurship. Passionate about solving real-world problems through data, quantitative thinking, and scalable technology. Exploring research, startup innovation, and data-driven decision making while developing impactful digital products.
+
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn-neon">Hire Me</a>
+            <a href="#resume" class="btn-neon btn-neon-magenta">View Resume</a>
+          </div>
+          <div class="tech-badges-grid">
+            <span class="tech-badge">#Python</span>
+            <span class="tech-badge">#C Programming</span>
+            <span class="tech-badge">#postgresSQL</span>
+            <span class="tech-badge">#Patent Writting</span>
+            <span class="tech-badge">#Quantitative Finance</span>
+          </div>
+        </div>
+        <div class="hero-photo-wrapper">
+          <div class="photo-frame">
+            <img id="avatar-img" src="https://picsum.photos/300" alt="Arham's Profile Photo"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title"><span>01.</span> Data & Intelligence Stack</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Programming & Query</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span>Python</span>
+                <span>92%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" data-progress="92%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span>SQL (Postgres)</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" data-progress="88%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span>R Programming</span>
+                <span>50%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" data-progress="50%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Analysis & Modeling</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span>Data Visualization (Seaborn/Plotly)</span>
+                <span>59%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" data-progress="59%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span>Quantitative Research</span>
+                <span>65%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" data-progress="65%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title"><span>02.</span> Projects Repository</h2>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Python">MarketPulse</button>
+        <button class="filter-btn" data-filter="HTML">eVEStro</button>
+        <button class="filter-btn" data-filter="Python(pyttsx3)">RoboSpeaker</button>
+      </div>
+      <div class="projects-grid" id="projects-container">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+      <h2 class="section-title"><span>03.</span> Printed Publications</h2>
+      <div class="publications-list" id="publications-container">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section id="academics">
+      <h2 class="section-title"><span>04.</span> Academic Timeline</h2>
+      <div class="academics-timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2025 - 2029</div>
+            <h3>Bachelor of Science in Computer Science</h3>
+            <div class="timeline-school">Lovely Professional University</div>
+            <div class="timeline-grade">Grade: 8.22 CGPA</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2022 - 2023</div>
+            <h3>10th Class</h3>
+            <div class="timeline-school">LADM DAV Public School</div>
+            <div class="timeline-grade">Percentage: 90% </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2024 - 2025</div>
+            <h3>12th Class</h3>
+            <div class="timeline-school">Greenland Day Boarding School</div>
+            <div class="timeline-grade">Percentage: 78.8% // PCM </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+      <h2 class="section-title"><span>05.</span> Professional Dossier</h2>
+      <div class="resume-container">
+        <div class="resume-preview-box">
+          <div class="resume-header">
+            <h3>Arham</h3>
+            <p>Data Science Aspirant</p>
+          </div>
+          <div class="resume-block">
+            <h4>Work History</h4>
+            <ul class="resume-list">
+              <li><strong>Patent Writer</strong> at Lovely Professional University — drafted 5 patents from which 1 is published, 1 is pending and rest are rejected</li>
+            </ul>
+          </div>
+          <div class="resume-block">
+            <h4>Technical Strengths</h4>
+            <ul class="resume-list">
+              <li>Programming & Data: Python, SQL (PostgreSQL, BigQuery), R, C</li>
+          </div>
+        </div>
+        <a href="/public/Resume.pdf" class="btn-neon" id="resume-download-btn" download="Arham_Resume.pdf">
+          Download PDF Resume
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact Footer Section -->
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h2>[CONNECT: WITH_ME]</h2>
+        <p>
+          Have a project in mind, an interesting research idea, or just want to chat about dev topics? Drop a line below or reach out via socials. Response time usually &lt; 2 hours.
+        </p>
+        
+<div class="gmail-box">
+  <span class="gmail-text">arhamgoyal2007@gmail.com</span>
+  <a 
+    href="https://mail.google.com/mail/?view=cm&to=arhamgoyal2007@gmail.com&subject=Project%20Discussion"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn-neon btn-neon-magenta" 
+    style="padding: 0.4rem 0.8rem; font-size: 0.75rem; text-decoration: none;"
+  >
+    Send Email
+  </a>
+</div>
+
+        <div class="social-links">
+          <a href="https://github.com/arham-bytes" target="_blank" class="social-btn" aria-label="GitHub Profile">
+            <!-- SVG Github -->
+            <svg style="width:20px;height:20px" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.53 4.97,20.35 9,21.68C9.5,21.77 9.68,21.46 9.68,21.2C9.68,20.97 9.67,20.21 9.66,19.4C6.88,20 6.3,18.06 6.3,18.06C5.84,16.9 5.18,16.59 5.18,16.59C4.27,15.97 5.25,16 5.25,16C6.26,16.07 6.79,17.04 6.79,17.04C7.68,18.57 9.14,18.13 9.71,17.87C9.8,17.22 10.06,16.78 10.35,16.53C8.13,16.28 5.8,15.42 5.8,11.58C5.8,10.48 6.19,9.59 6.83,8.89C6.73,8.63 6.38,7.61 6.93,6.23C6.93,6.23 7.78,5.96 9.71,7.26C10.5,7.04 11.37,6.93 12,6.93C12.63,6.93 13.5,7.04 14.29,7.26C16.21,5.96 17.06,6.23 17.06,6.23C17.61,7.61 17.26,8.63 17.16,8.89C17.81,9.59 18.2,10.48 18.2,11.58C18.2,15.43 15.86,16.27 13.62,16.52C13.98,16.83 14.3,17.45 14.3,18.4C14.3,19.76 14.29,20.86 14.29,21.2C14.29,21.47 14.47,21.78 14.97,21.68C19,20.35 22,16.53 22,12A10,10 0 0,0 12,2Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/arham-goyal-3a7bb0307" target="_blank" class="social-btn" aria-label="LinkedIn Profile">
+            <!-- SVG LinkedIn -->
+            <svg style="width:20px;height:20px" viewBox="0 0 24 24"><path fill="currentColor" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.44 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.2 6.88,5.2A1.68,1.68 0 0,0 5.2,6.88C5.2,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/arham_goyal00?igsh=MTJkOTg5dmczaDFxMQ==" target="_blank" class="social-btn" aria-label="Instagram Profile">
+            <!-- SVG Instagram -->
+            <svg style="width:20px;height:20px" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4A3.6,3.6 0 0,0 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M17.25,5.5A1.25,1.25 0 1,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 1,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 1,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+<div class="calendly-box">
+  <h3><strong>SCHEDULE_A_MEETING</strong></h3>
+  <p>Pick a time slot that works for you — I'll be there.</p>
+  <a 
+    href="https://calendly.com/arhamgoyal2007"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn-neon animate-glitch"
+    style="display: inline-block; margin-top: 1rem; text-decoration: none;"
+  >
+    [BOOK: A_SLOT]
+  </a>
+</div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 ARHAM // ALL RIGHTS RESERVED. INITIATE PROTOCOL 10.
+    </div>
+  </footer>
+
+  <!-- Floating Theme Switcher Drawer -->
+  <div class="floating-theme-panel" title="Switch Theme">
+    <div class="theme-dot-btn dot-cyberpunk active" data-theme="cyberpunk"></div>
+    <div class="theme-dot-btn dot-obsidian" data-theme="obsidian"></div>
+    <div class="theme-dot-btn dot-sakura" data-theme="sakura"></div>
+    <div class="theme-dot-btn dot-slate" data-theme="slate"></div>
+  </div>
+
+  <!-- Document Modal for Publications / Papers -->
+  <div class="doc-modal" id="doc-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-doc-title">Publication Document</h3>
+        <button class="close-btn" id="modal-doc-close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-doc-body">
+        <!-- Injected content -->
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
